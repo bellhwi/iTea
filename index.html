@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>i-Tea</title>
-  <link rel="stylesheet" href="css/utilities.css">
-  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="mt-1">
+  <header>
+    <!-- Navbar -->
     <nav>
       <div class="container">
-        <img id="logo" src="img/logo.png">
-        <ul>
+        <img id="logo" class="mt-1" src="img/logo.png">
+        <ul class="mt-1">
           <li><a href="#">About</a></li>
           <li><a href="#">Menu</a></li>
           <li><a href="#">Contact</a></li>
@@ -21,6 +21,50 @@
         </ul>
       </div>
     </nav>
+  
+    <!-- Slideshow -->
+    <section>
+      <div class="slideshow">
+        <div class="slides">
+          <img src="img/hero.jpeg">
+          <h1>Authentic Boba Milk Tea, Fruit Tea & Juice Bar</h1>
+        </div>
+        <div class="slides">
+          <img src="img/hero-2.jpeg">
+          <h1>We Only Use The Finest Ingredients</h1>
+        </div>
+        <div class="slides">
+          <img src="img/hero-3.jpeg">
+          <h1>Authentic Popcorn Chicken</h1>
+        </div>
+        <div class="slides">
+          <img src="img/hero-4.jpeg">
+          <h1>Fresh Super Fruit Tea</h1>
+        </div>
+        <div class="slides">
+          <img src="img/hero-5.jpeg">
+          <h1>Contemporary Original Taiwan Taste</h1>
+        </div>
+        <div class="slides">
+          <img src="img/hero-6.jpeg">
+          <h1>Our Popular Cheesma Series</h1>
+        </div>
+      </div>
+  
+      <!-- Next and previous buttons -->
+      <a class="prev" id="prev">&#10094;</a>
+      <a class="next" id="next">&#10095;</a>
+    </section>
+
   </header>
+  
+  <!-- Contents -->
+  <main>
+    <p>Welcome to i-Tea!</p>
+  </main>
+      
+
+
+  <script src="app.js"></script>
 </body>
 </html>
