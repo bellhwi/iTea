@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
   <title>i-Tea</title>
 </head>
@@ -17,7 +18,7 @@
           <li><a href="#">About</a></li>
           <li><a href="#">Menu</a></li>
           <li><a href="#">Contact</a></li>
-          <li><a href="#">Order</a></li>
+          <li><a href="#" class="cta-btn" id="cta-btn">Sign Up</a></li>
         </ul>
       </div>
     </nav>
@@ -60,18 +61,31 @@
   
   <!-- Contents -->
   <main>
-    <div class="about mt-4">
+    <!-- About -->
+    <div class="about mt-6">
       <div class="container">
         <span>ABOUT US</span>
-        <h1 class="mt-1">Not Just a Cup of Tea, <br>It's a Lifestyle</h1>
-        <p class="mt-2">Our tea was found in Kaohsiung and Alishan Province, to the current position as one of the largest tea grower in Taiwan.
-          <br>Over 45 years of experience in the tea industry, we bring you many unique drink selections, <br>you always can get a cup of perfectly made fresh tea every time.</p>
+        <h1 class="mt-2">Not Just a Cup of Tea, <br>It's a Lifestyle</h1>
+        <p class="mt-2">"Our tea was found in Kaohsiung and Alishan Province, to the current position as one of the largest tea grower in Taiwan.
+          <br>Over 45 years of experience in the tea industry, we bring you many unique drink selections, <br>you always can get a cup of perfectly made fresh tea every time."</p>
+      </div>
+    </div>
+    <!-- Menu -->
+    <div class="menu mt-6">
+      <div class="container">
+        <span>OUR MENU</span>
+        <ul class="mt-2" id="menus">
+          <li><a class="active" id="filter-all">All</a></li>
+          <li><a id="filter-drinks">Drinks</a></li>
+          <li><a id="filter-food">Food</a></li>
+        </ul>
+        <div class="grid-container mt-4" id="grid-container"></div>
       </div>
     </div>
   </main>
       
 
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js" integrity="sha512-6gudNVbNM/cVsLUMOb8g2b/RBqtQJ3aDfRFgU+5paeaCTtbYY/Dg00MzZq7r6RvJGI2KKtPBhjkHGTL/iOe21A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="app.js"></script>
 </body>
 </html>

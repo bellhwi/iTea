@@ -2,7 +2,7 @@
 
 :root {
   --max-width: 1000px;
-  --primary-color: #ee9b00;
+  --primary-color: #f4a261;
 }
 
 * {
@@ -23,6 +23,12 @@
 .mt-4 {
   margin-top: 4rem;
 }
+.mt-5 {
+  margin-top: 5rem;
+}
+.mt-6 {
+  margin-top: 6rem;
+}
 .pt-1 {
   padding-top: 1rem;
 }
@@ -34,6 +40,12 @@
 }
 .pt-4 {
   padding-top: 4rem;
+}
+.pt-5 {
+  padding-top: 5rem;
+}
+.pt-6 {
+  padding-top: 6rem;
 }
 
 a,
@@ -48,18 +60,24 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 
-h1 {
+h1,
+button {
   font-family: 'Raleway', sans-serif;
+  line-height: 1.5;
 }
 
 p {
   color: #777;
+  line-height: 1.5;
+}
+
+ul {
+  list-style: none;
 }
 
 .container {
   max-width: var(--max-width);
   margin: auto;
-  overflow: hidden;
 }
 
 header {
@@ -103,6 +121,16 @@ nav ul li:not(:last-child) {
   color: #fff;
 }
 
+/* Sign Up button */
+.cta-btn {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+}
+
 .prev,
 .next {
   cursor: pointer;
@@ -124,7 +152,6 @@ nav ul li:not(:last-child) {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 50vh;
   text-align: center;
 }
 
@@ -132,7 +159,53 @@ nav ul li:not(:last-child) {
   color: var(--primary-color);
 }
 
-.about .container h1,
-.about .container p {
-  line-height: 1.5;
+/* Menu */
+.menu .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.menu .container span {
+  color: var(--primary-color);
+}
+
+.menu .container ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu .container ul li:not(:last-child) {
+  padding-right: 2rem;
+}
+
+.menu .container li a {
+  cursor: pointer;
+  color: #777;
+}
+
+.active {
+  color: #000 !important;
+}
+
+/* Menu Grid */
+.grid-container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.5rem;
+}
+
+.grid-container .menu img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
+.menu a:hover img {
+  opacity: 0.3;
 }

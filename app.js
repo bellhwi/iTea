@@ -1,14 +1,44 @@
 let slides = document.getElementsByClassName('slides');
 let slideIndex = 1;
+const filterAll = document.getElementById('filter-all');
+const filterDrinks = document.getElementById('filter-drinks');
+const filterFood = document.getElementById('filter-food');
 
-showSlides(slideIndex);
+init();
+addEventListeners();
 
-// Auto scroll slideshow
-// setInterval(prevSlide, 3000);
+function init() {
+  // Show first slide when page loaded
+  showSlides(slideIndex);
 
-// Next/prev handle
-document.getElementById('prev').addEventListener('click', prevSlide);
-document.getElementById('next').addEventListener('click', nextSlide);
+  // Auto scroll slideshow
+  setInterval(nextSlide, 3000);
+}
+
+function addEventListeners() {
+  // Next/prev handle
+  document.getElementById('prev').addEventListener('click', prevSlide);
+  document.getElementById('next').addEventListener('click', nextSlide);
+
+  // Display all menu when load the page
+  document.addEventListener('DOMContentLoaded', displayMenu);
+
+  // Set active to show menus
+  filterAll.addEventListener('click', setActiveMenu);
+  filterDrinks.addEventListener('click', setActiveMenu);
+  filterFood.addEventListener('click', setActiveMenu);
+}
+
+function setActiveMenu(e) {
+  const menus = [...document.querySelectorAll('#menus li a')];
+  menus.forEach(menu => {
+    menu.className = '';
+  })
+  e.target.className = 'active';
+
+  // Display Menus
+  displayMenu();
+}
 
 function prevSlide() {
   showSlides(slideIndex -= 1);
@@ -39,3 +69,86 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = 'block';
 }
 
+function displayMenu() {
+  const gridContainer = document.getElementById('grid-container');
+
+  // Clear grid contents
+  gridContainer.innerHTML = '';
+
+  // Filter & display menu
+  if (filterAll.classList.contains('active')) {
+    // Show Drinks Menu List
+    for(let i = 1; i < 3; i++) {
+      gridContainer.innerHTML += `
+      <div class="menu">
+        <a href="img/drink-menu-${i}.jpeg" data-lightbox="menus"
+        data-title="Our Menu"><img src="img/drink-menu-${i}.jpeg"></a>
+      </div>`
+    }
+
+    // Show Food Menu List
+    for(let i = 1; i < 3; i++) {
+      gridContainer.innerHTML += `
+      <div class="menu">
+        <a href="img/food-menu-${i}.jpeg" data-lightbox="menus"
+        data-title="Our Menu"><img src="img/food-menu-${i}.jpeg"></a>
+      </div>`
+    }
+
+    // Show Drinks
+    for(let i = 1; i < 16; i++) {
+      gridContainer.innerHTML += `
+      <div class="menu">
+        <a href="img/drink-${i}.jpeg" data-lightbox="menus"
+        data-title="Our Menu"><img src="img/drink-${i}.jpeg"></a>
+      </div>`
+    }
+
+    // Show Food
+    for(let i = 1; i < 6; i++) {
+      gridContainer.innerHTML += `
+      <div class="menu">
+        <a href="img/food-${i}.jpeg" data-lightbox="menus"
+        data-title="Our Menu"><img src="img/food-${i}.jpeg"></a>
+      </div>`
+    }
+  }
+  else if (filterDrinks.classList.contains('active')) {
+    // Show Drinks Menu List
+    for(let i = 1; i < 3; i++) {
+      gridContainer.innerHTML += `
+      <div class="menu">
+        <a href="img/drink-menu-${i}.jpeg" data-lightbox="menus"
+        data-title="Our Menu"><img src="img/drink-menu-${i}.jpeg"></a>
+      </div>`
+    }
+    // Show Drinks
+    for(let i = 1; i < 16; i++) {
+    gridContainer.innerHTML += `
+    <div class="menu">
+      <a href="img/drink-${i}.jpeg" data-lightbox="menus"
+      data-title="Our Menu"><img src="img/drink-${i}.jpeg"></a>
+    </div>`
+    }
+  }
+  else if (filterFood.classList.contains('active')) {
+    // Show Food Menu List
+    for(let i = 1; i < 3; i++) {
+      gridContainer.innerHTML += `
+      <div class="menu">
+        <a href="img/food-menu-${i}.jpeg" data-lightbox="menus"
+        data-title="Our Menu"><img src="img/food-menu-${i}.jpeg"></a>
+      </div>`
+    }
+    
+    // Show Food
+    for(let i = 1; i < 6; i++) {
+    gridContainer.innerHTML += `
+    <div class="menu">
+      <a href="img/food-${i}.jpeg" data-lightbox="menus"
+      data-title="Our Menu"><img src="img/food-${i}.jpeg"></a>
+    </div>`
+    }
+  }
+
+}
