@@ -2,7 +2,7 @@
 
 :root {
   --max-width: 1000px;
-  --primary-color: #f4a261;
+  --primary-color: #e85d04;
 }
 
 * {
@@ -73,6 +73,10 @@ p {
 
 ul {
   list-style: none;
+}
+
+span {
+  color: var(--primary-color);
 }
 
 .container {
@@ -147,6 +151,11 @@ nav ul li:not(:last-child) {
 }
 
 /* About */
+.about {
+  background-color: #f4f4f4;
+  padding: 5rem 0;
+}
+
 .about .container {
   display: flex;
   flex-direction: column;
@@ -155,12 +164,12 @@ nav ul li:not(:last-child) {
   text-align: center;
 }
 
-.about .container span {
-  color: var(--primary-color);
+/* Menu */
+.menus {
+  padding: 5rem 0;
 }
 
-/* Menu */
-.menu .container {
+.menus .container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -168,21 +177,17 @@ nav ul li:not(:last-child) {
   text-align: center;
 }
 
-.menu .container span {
-  color: var(--primary-color);
-}
-
-.menu .container ul {
+.menus .container ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.menu .container ul li:not(:last-child) {
+.menus .container ul li:not(:last-child) {
   padding-right: 2rem;
 }
 
-.menu .container li a {
+.menus .container li a {
   cursor: pointer;
   color: #777;
 }
@@ -208,4 +213,61 @@ nav ul li:not(:last-child) {
 
 .menu a:hover img {
   opacity: 0.3;
+}
+
+/* Contact */
+.contact {
+  text-align: center;
+  padding: 5rem 0;
+  background-color: #f4f4f4;
+}
+
+.contact .container {
+  text-align: center;
+}
+
+.contact .container .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.contact .container .form > * {
+  margin: 0.5rem;
+}
+
+.contact .container .form .name,
+.contact .container .form .email {
+  width: 50%;
+  padding: 1rem;
+}
+
+.contact .container .form .message {
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+  resize: none;
+}
+
+.contact .container .form input::placeholder {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.contact .container .form .message::placeholder {
+  font-family: 'Ubuntu', sans-serif;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 1rem 0 0 1rem;
+}
+
+.contact .container .form .submit {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
 }

@@ -12,7 +12,7 @@ function init() {
   showSlides(slideIndex);
 
   // Auto scroll slideshow
-  setInterval(nextSlide, 3000);
+  setInterval(nextSlide, 5000);
 }
 
 function addEventListeners() {
@@ -30,8 +30,8 @@ function addEventListeners() {
 }
 
 function setActiveMenu(e) {
-  const menus = [...document.querySelectorAll('#menus li a')];
-  menus.forEach(menu => {
+  const menuList = [...document.querySelectorAll('#menu-list li a')];
+  menuList.forEach(menu => {
     menu.className = '';
   })
   e.target.className = 'active';
