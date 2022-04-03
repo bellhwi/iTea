@@ -60,14 +60,12 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 
-h1,
-button {
+h1 {
   font-family: 'Raleway', sans-serif;
   line-height: 1.5;
 }
 
 p {
-  color: #777;
   line-height: 1.5;
 }
 
@@ -106,6 +104,68 @@ nav ul li:not(:last-child) {
   padding-right: 2rem;
 }
 
+/* Modal */
+.modal {
+  visibility: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal.show-modal {
+  visibility: visible;
+}
+
+.modal .modal-container {
+  position: relative;
+  background-color: #f4f4f4;
+  height: 65vh;
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+.modal .modal-container .close-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.modal .modal-container .modal-form input {
+  display: block;
+  width: 100%;
+  height: 2rem;
+  margin-top: 2px;
+  padding: 5px;
+}
+
+.modal .modal-container .modal-form div:not(:first-child) {
+  padding-top: 1rem;
+}
+
+.modal .modal-container .modal-form .submit-btn {
+  cursor: pointer;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  font-size: 1rem;
+  color: #fff;
+}
+
 /* Slideshow */
 .slideshow {
   position: absolute;
@@ -123,6 +183,7 @@ nav ul li:not(:last-child) {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
+  font-size: 2rem;
 }
 
 /* Sign Up button */
@@ -133,6 +194,7 @@ nav ul li:not(:last-child) {
   color: #fff;
   padding: 10px 15px;
   border: none;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .prev,
@@ -162,6 +224,10 @@ nav ul li:not(:last-child) {
   align-items: center;
   justify-content: flex-start;
   text-align: center;
+}
+
+.about .container p {
+  color: #777;
 }
 
 /* Menu */
@@ -270,4 +336,33 @@ nav ul li:not(:last-child) {
   color: #fff;
   padding: 10px 15px;
   border: none;
+}
+
+/* Footer */
+footer {
+  color: #777;
+}
+
+footer p {
+  font-size: 0.8rem;
+  text-align: center;
+}
+footer .sns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
+  user-select: none;
+}
+
+footer .sns .container a {
+  color: #777;
+}
+
+footer .sns .container a:hover {
+  color: #000;
+}
+
+footer .sns a:not(first-child) {
+  padding-left: 1rem;
 }

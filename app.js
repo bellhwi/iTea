@@ -3,6 +3,9 @@ let slideIndex = 1;
 const filterAll = document.getElementById('filter-all');
 const filterDrinks = document.getElementById('filter-drinks');
 const filterFood = document.getElementById('filter-food');
+const ctaBtn = document.getElementById('cta-btn');
+const closeBtn = document.getElementById('close-btn');
+const modal = document.getElementById('modal');
 
 init();
 addEventListeners();
@@ -27,6 +30,21 @@ function addEventListeners() {
   filterAll.addEventListener('click', setActiveMenu);
   filterDrinks.addEventListener('click', setActiveMenu);
   filterFood.addEventListener('click', setActiveMenu);
+
+  // Open Modal
+  ctaBtn.addEventListener('click', () => {
+    modal.classList.add('show-modal');
+  })
+
+  // Close Modal
+  closeBtn.addEventListener('click', () => {
+    modal.classList.remove('show-modal');
+  })
+
+  // Hide modal on outside click
+  window.addEventListener('click', e => {
+    e.target == modal ? modal.classList.remove('show-modal') : false;
+  })
 }
 
 function setActiveMenu(e) {
@@ -152,3 +170,4 @@ function displayMenu() {
   }
 
 }
+
